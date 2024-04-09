@@ -1,0 +1,17 @@
+{
+  "name": "mw_test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "SinonJZH",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jquery": "^3.5.29",
+    "@types/node": "^20.12.5",
+    "types-mediawiki": "^1.6.0",
+    "typescript": "^5.4.4"
+  }
+}

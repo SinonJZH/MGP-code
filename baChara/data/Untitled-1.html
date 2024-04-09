@@ -1,0 +1,330 @@
+<!--待补充-->
+<templatestyles src="蔚蓝档案学生/canary/style.css"/>
+<templatestyles src="蔚蓝档案学生/canary/BG.css"/>
+<templatestyles src="蔚蓝档案/helper.css"/><!--{{#Widget:BAChar}}-->
+<!-- Vardefine area -->{{#vardefine:Prof|{{#switch:{{#invoke:BACharData|main|{{{name|Shiroko}}}|Role}}|DamageDealer=打手|Healer=治愈师|Supporter=辅助|Tanker=坦克|Vehicle=T.S|#default=打手}}}}<!--
+-->{{#vardefine:AttackType|{{#switch:{{#invoke:BACharData|main|{{{name|Shiroko}}}|AttackType}}|Explosion=爆发|Pierce=贯穿|Mystic=神秘|Sonic=音波|#default=神秘}}}}<!--
+-->{{#vardefine:ArmorType|{{#switch:{{#invoke:BACharData|main|{{{name|Shiroko}}}|ArmorType}}|LightArmor=轻装甲|HeavyArmor=重装甲|Unarmed=特殊装甲|ElasticArmor=弹力装甲|#default=特殊装甲}}}}
+<!-- Tmp var --><!-- End vardefine -->
+<div class="Blue_Archive_Character_Template">
+	<div class="bachar-background bachar-background-{{#invoke:BACharData|main|{{{name|Shiroko}}}|BG}}"></div>
+	<div class="bachar-container" data-ba-name="{{{name|Shiroko}}}">
+		{{#invoke:BACharData|json|{{{name|Shiroko}}}}}
+		<div class="bachar-illust">{{useImg|BA_{{{name|Shiroko}}}.png|height:550px}}</div>
+		<div class="bachar-character">
+			<div class="bachar-char-top bachar-all-RoundedRectangle">
+				<div class="bachar-char-info"><!--
+			--> <span class="bachar-char-bond bachar-all-unitalic"><div
+						style="display:inline-block;margin-left:4px;position:relative">[[File:BA Icon Bond.png|30px|link=]]<span
+						style="position:absolute;transform:translate(-50%, -50%);left:15px;top:13px;text-shadow:1px 1px 0 #ffffff, -1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px -1px 0 #ffffff;font-size:16px">{{#invoke:BACharData|main|{{{name|Shiroko}}}|MLUnlockOn}}</span>
+</div></span><!--
+			--> <span class="bachar-char-name bachar-all-unitalic bachar-all-mainfont">{{#invoke:BACharData|main|{{{name|Shiroko}}}|ZHName}}</span><!--
+			--> <span class="bachar-char-star bachar-all-unitalic">[[File:BA Pic Star {{#invoke:BACharData|main|{{{name|Shiroko}}}|Rate}}.png|初始星级为{{#invoke:BACharData|main|{{{name|Shiroko}}}|Rate}}星|link=|50px]]</span>
+					<div class="bachar-char-class {{#invoke:BACharData|main|{{{name|Shiroko}}}|Class}}">
+						{{#invoke:BACharData|main|{{{name|Shiroko}}}|Class}}
+					</div>
+				</div>
+				<div class="bachar-char-exp"><!--
+			--> <span style="margin:0 0.5em;flex:0 0 3em;">Lv<span class="bachar-char-explv">50</span></span>
+					<div class="bachar-char-expbar bachar-all-unitalic"></div>
+				</div>
+			</div>
+			<div class="bachar-char-bottom bachar-all-RoundedRectangle">
+				<div class="bachar-char-role bachar-all-mainfont bachar-all-RoundedRectangle"><!--
+			--> <span class="bachar-all-unitalic">[[File:BA_Prof_{{#var:Prof}}.png|30px]]<span style="user-select:none">　</span>{{#var:Prof}}</span>
+				</div>
+				<div class="bachar-char-attacktype bachar-all-mainfont bachar-all-RoundedRectangle bachar-bc-{{#invoke:BACharData|main|{{{name|Shiroko}}}|AttackType}}">
+					<div class="bachar-char-typeleft"><span class="bachar-all-unitalic">[[File:BA_Icon_Attack.png|攻击|link=|25px]]</span>
+					</div>
+					<div class="bachar-char-typeright"><span class="bachar-all-unitalic">{{#var:AttackType}}</span>
+					</div>
+				</div>
+				<div class="bachar-char-defensetype bachar-all-mainfont bachar-all-RoundedRectangle bachar-bc-{{#invoke:BACharData|main|{{{name|Shiroko}}}|ArmorType}}">
+					<div class="bachar-char-typeleft"><span class="bachar-all-unitalic">[[File:BA_Icon_Defense.png|防御|link=|25px]]</span>
+					</div>
+					<div class="bachar-char-typeright"><span class="bachar-all-unitalic">{{#var:ArmorType}}</span></div>
+				</div>
+				<div class="bachar-char-position bachar-all-mainfont bachar-all-RoundedRectangle">
+					{{#invoke:BACharData|main|{{{name|Shiroko}}}|Position}}
+				</div>
+				<div class="bachar-char-terrain-street bachar-char-terrain bachar-all-RoundedRectangle"><!--
+			--> <span>[[File:BA_Terrain_Street.png|36px|城镇战|link=]]</span><span class="bachar-all-unitalic">[[File:BA_TerRat_{{#invoke:BACharData|main|{{{name|Shiroko}}}|Street}}.png|36px|城镇战战斗力为{{#invoke:BACharData|main|{{{name|Shiroko}}}|Street}}|link=]]</span>
+				</div>
+				<div class="bachar-char-terrain-outdoor bachar-char-terrain bachar-all-RoundedRectangle"><!--
+			--> <span>[[File:BA_Terrain_Outdoor.png|36px|野战|link=]]</span><span class="bachar-all-unitalic">[[File:BA_TerRat_{{#invoke:BACharData|main|{{{name|Shiroko}}}|Outdoor}}.png|36px|城镇战战斗力为{{#invoke:BACharData|main|{{{name|Shiroko}}}|Outdoor}}|link=]]</span>
+				</div>
+				<div class="bachar-char-terrain-indoor bachar-char-terrain bachar-all-RoundedRectangle"><!--
+			--> <span>[[File:BA_Terrain_Indoor.png|36px|室内战|link=]]</span><span class="bachar-all-unitalic">[[File:BA_TerRat_{{#invoke:BACharData|main|{{{name|Shiroko}}}|Indoor}}.png|36px|室内战战斗力为{{#invoke:BACharData|main|{{{name|Shiroko}}}|Indoor}}|link=]]</span>
+				</div>
+			</div>
+		</div>
+		<div class="bachar-stats">
+			<div style="background:#D6EAF2;padding:5px;">
+				<div class="bachar-stats-info">
+					<div class="bachar-stats-title bachar-all-mainfont"><span
+							class="bachar-all-unitalic">基本数据</span></div>
+					<div class="bachar-stats-data bachar-all-RoundedRectangle">
+						<div class="bachar-stats-dataleft" style="width:95%;">
+							<div class="bachar-stats-dataleft-line">
+								<div class="bachar-stats-container bachar-all-mainfont bachar-stats-MaxHP"><span
+										class="bachar-stats-data-name">HP</span><span
+										class="bachar-stats-value">NaN</span></div>
+								<div class="bachar-stats-container bachar-all-mainfont bachar-stats-AttackPower"><span
+										class="bachar-stats-data-name">攻击力</span><span
+										class="bachar-stats-value">NaN</span></div>
+							</div>
+							<div class="bachar-stats-dataleft-hr" style="display:none;"></div>
+							<div class="bachar-stats-dataleft-line">
+								<div class="bachar-stats-container bachar-all-mainfont bachar-stats-DefensePower"><span
+										class="bachar-stats-data-name">防御力</span><span
+										class="bachar-stats-value">NaN</span></div>
+								<div class="bachar-stats-container bachar-all-mainfont bachar-stats-HealPower"><span
+										class="bachar-stats-data-name">治愈力</span><span
+										class="bachar-stats-value">NaN</span></div>
+							</div>
+						</div>
+						<div class="bachar-stats-dataright bachar-stats-data-detail-button"><span class="bachar-all-unitalic">🔍<br>详细</span></div>
+					</div>
+				</div>
+				<div class="bachar-stats-skill">
+					<div class="bachar-stats-skill-container"><!--
+				--> <span class="bachar-stats-skillname">EX技能</span>
+						<div class="bachar-stats-skillicon bachar-all-unitalic">[[File:BA_Skill_1.png|35px|link=]]</div>
+						<div class="bachar-stats-skillhr bachar-all-unitalic"></div><!--
+				--> <span class="bachar-stats-skilllevel bachar-all-unitalic">Lv.4</span>
+					</div>
+					<!--EX技能弹出框-->
+					<div class="bachar-stats-skill-detail bachar-stats-skill-detail-ex" style="display: none;">
+						<div class="bachar-stats-skill-title"><div>召唤无人机：火力支援</div></div>
+						<div class="bachar-stats-skill-mid"><!--
+						 --><span class="bachar-stats-skill-type">EX技能</span><!--
+						--><span class="bachar-stats-skill-cost">COST:<!--
+							--><span class="bachar-stats-skill-coust-count-1">2</span><!--
+							--><span class="bachar-stats-skill-coust-count-2" style="display: none;">2</span><!--
+							--><span class="bachar-stats-skill-coust-count-3" style="display: none;">2</span><!--
+							--><span class="bachar-stats-skill-coust-count-4" style="display: none;">2</span><!--
+							--><span class="bachar-stats-skill-coust-count-5" style="display: none;">2</span><!--
+							--></span><!--
+						--><span class="bachar-stats-skill-flex-spacer"></span><!--
+						--><span class="bachar-stats-skill-level">LV.1</span>
+						</div>
+						<div class="bachar-stats-skill-detail-info"><!--
+							-->对一名敌人造成攻击力<span class="bachar-stats-skill-count"><!--
+							--><span class="bachar-stats-skill-cout-1">750%</span><!--
+							--><span class="bachar-stats-skill-cout-2" style="display: none;">752%</span><!--
+							--><span class="bachar-stats-skill-cout-3" style="display: none;">754%</span><!--
+							--><span class="bachar-stats-skill-cout-4" style="display: none;">755%</span><!--
+							--><span class="bachar-stats-skill-cout-5" style="display: none;">760%</span><!--
+						--></span>的伤害
+						</div>
+					</div>
+					<div class="bachar-stats-skill-container"><!--
+				--> <span class="bachar-stats-skillname">基本技能</span>
+						<div class="bachar-stats-skillicon bachar-all-unitalic">[[File:BA_Skill_1.png|35px|link=]]</div>
+						<div class="bachar-stats-skillhr bachar-all-unitalic"></div><!--
+				--> <span class="bachar-stats-skilllevel bachar-all-unitalic">Lv.5</span>
+					</div>
+					<!--基本技能弹出框-->
+					<div class="bachar-stats-skill-detail bachar-stats-skill-detail-basic" style="display:none">
+						<div class="bachar-stats-skill-title"><div>投掷手榴弹</div></div>
+						<div class="bachar-stats-skill-mid"><!--
+						--><span class="bachar-stats-skill-type">基本技能</span><!--
+						--><span class="bachar-stats-skill-flex-spacer"></span><!--
+						--><span class="bachar-stats-skill-level">LV.1</span>
+						</div>
+						<div class="bachar-stats-skill-detail-info"><!--
+							-->每<span class="bachar-stats-skill-count">25秒</span>，对圆形范围内的敌人造成攻击力<span class="bachar-stats-skill-count"><!--
+							--><span class="bachar-stats-skill-cout-1">359%</span><!--
+							--><span class="bachar-stats-skill-cout-2" style="display: none;">360%</span><!--
+							--><span class="bachar-stats-skill-cout-3" style="display: none;">361%</span><!--
+							--><span class="bachar-stats-skill-cout-4" style="display: none;">362%</span><!--
+							--><span class="bachar-stats-skill-cout-5" style="display: none;">363%</span><!--
+							--><span class="bachar-stats-skill-cout-6" style="display: none;">364%</span><!--
+							--><span class="bachar-stats-skill-cout-7" style="display: none;">365%</span><!--
+							--><span class="bachar-stats-skill-cout-8" style="display: none;">366%</span><!--
+							--><span class="bachar-stats-skill-cout-9" style="display: none;">367%</span><!--
+							--><span class="bachar-stats-skill-cout-10" style="display: none;">368%</span><!--
+						--></span>的伤害
+						</div>
+					</div>
+					<div class="bachar-stats-skill-container"><!--
+				--> <span class="bachar-stats-skillname">强化技能</span>
+						<div class="bachar-stats-skillicon bachar-all-unitalic">[[File:BA_Skill_1.png|35px|link=]]</div>
+						<div class="bachar-stats-skillhr bachar-all-unitalic"></div><!--
+				--> <span class="bachar-stats-skilllevel bachar-all-unitalic">Lv.6</span>
+					</div>
+					<!--强化技能弹出框-->
+					<div class="bachar-stats-skill-detail bachar-stats-skill-detail-buff" style="display: none;">
+						<div class="bachar-stats-skill-title"><div>瞄准弱点</div></div>
+						<div class="bachar-stats-skill-mid"><!--
+						--><span class="bachar-stats-skill-type">强化技能</span><!--
+						--><span class="bachar-stats-skill-flex-spacer"></span><!--
+						--><span class="bachar-stats-skill-level">LV.1</span>
+						</div>
+						<div class="bachar-stats-skill-detail-info"><!--
+							-->暴击值增加<span class="bachar-stats-skill-count"><!--
+							--><span class="bachar-stats-skill-cout-1">23.6%</span><!--
+							--><span class="bachar-stats-skill-cout-2" style="display: none;">24.6%</span><!--
+							--><span class="bachar-stats-skill-cout-3" style="display: none;">25.6%</span><!--
+							--><span class="bachar-stats-skill-cout-4" style="display: none;">26.0%</span><!--
+							--><span class="bachar-stats-skill-cout-5" style="display: none;">26.1%</span><!--
+							--><span class="bachar-stats-skill-cout-6" style="display: none;">26.2%</span><!--
+							--><span class="bachar-stats-skill-cout-7" style="display: none;">26.3%</span><!--
+							--><span class="bachar-stats-skill-cout-8" style="display: none;">26.4%</span><!--
+							--><span class="bachar-stats-skill-cout-9" style="display: none;">26.5%</span><!--
+							--><span class="bachar-stats-skill-cout-10" style="display: none;">26.6%</span><!--
+						--></span>
+						</div>
+					</div>
+					<div class="bachar-stats-skill-container"><!--
+				--> <span class="bachar-stats-skillname">子技能</span>
+						<div class="bachar-stats-skillicon bachar-all-unitalic">[[File:BA_Skill_1.png|35px|link=]]</div>
+						<div class="bachar-stats-skillhr bachar-all-unitalic"></div><!--
+				--> <span class="bachar-stats-skilllevel bachar-all-unitalic">Lv.6</span>
+					</div>
+					<!--子技能弹出框-->
+					<div class="bachar-stats-skill-detail bachar-stats-skill-detail-side" style="display: none;">
+						<div class="bachar-stats-skill-title"><div>高速连射</div></div>
+						<div class="bachar-stats-skill-mid"><!--
+						--><span class="bachar-stats-skill-type">子技能</span><!--
+						--><span class="bachar-stats-skill-flex-spacer"></span><!--
+						--><span class="bachar-stats-skill-level">LV.1</span>
+						</div>
+						<div class="bachar-stats-skill-detail-info" style="display: none;"><!--
+							-->一般攻击时，有<span class="bachar-stats-skill-count">20%</span>的概率攻击速度增加<span class="bachar-stats-skill-count"><!--
+							--><span class="bachar-stats-skill-cout-1">52.4%%</span><!--
+							--><span class="bachar-stats-skill-cout-2" style="display: none;">53.4%</span><!--
+							--><span class="bachar-stats-skill-cout-3" style="display: none;">54.4%</span><!--
+							--><span class="bachar-stats-skill-cout-4" style="display: none;">55.4%</span><!--
+							--><span class="bachar-stats-skill-cout-5" style="display: none;">56.4%</span><!--
+							--><span class="bachar-stats-skill-cout-6" style="display: none;">57.0%</span><!--
+							--><span class="bachar-stats-skill-cout-7" style="display: none;">57.1%</span><!--
+							--><span class="bachar-stats-skill-cout-8" style="display: none;">57.2%</span><!--
+							--><span class="bachar-stats-skill-cout-9" style="display: none;">57.3%</span><!--
+							--><span class="bachar-stats-skill-cout-10" style="display: none;">57.4%</span><!--
+						--></span>(<span class="bachar-stats-skill-count">30秒</span>内)(冷却时间<span class="bachar-stats-skill-count"></span>25秒)
+						</div>
+					</div>
+					<div class="bachar-stats-skill-upgate bachar-all-mainfont"><span
+							class="bachar-all-unitalic">技能<br>成长</span></div>
+				</div>
+				<div class="bachar-stats-weapon" style="display:none;">
+					<div class="bachar-stats-weapon-type bachar-all-mainfont">
+						<div class="bachar-stats-weapon-backgroundleft"></div>
+						<div class="bachar-stats-weapon-backgroundright"></div><!--
+				--> <span class="bachar-stats-weapon-typeinfo">[[File:BA_Icon_Shield.png|22px|掩蔽|link=]]SMG</span>
+					</div>
+					<div class="bachar-stats-weapon-image bachar-all-RoundedRectangle">
+						<div class="bachar-stats-weapon-icon"></div>
+						<div class="bachar-stats-weapon-img bachar-all-unitalic">{{filepath:BA_Arm_Shiroko.png|250}}
+						</div>
+					</div>
+					<div class="bachar-stats-weapon-info bachar-all-mainfont"><span class="bachar-all-unitalic">固有<br>武器</span>
+					</div>
+				</div>
+				<div class="bachar-stats-equip">
+					<div class="bachar-stats-equip-container">
+						<div class="bachar-stats-equip-level">Lv.1</div>
+						<div class="bachar-stats-equip-tear">T1</div>
+						<div class="bachar-stats-equip-type">E</div>
+						<div class="bachar-stats-equip-img">{{Sandbox/一位史蒂夫/1|{{{name|Shiroko}}}|1}}</div>
+					</div>
+					<div class="bachar-stats-equip-container">
+						<div class="bachar-stats-equip-level">Lv.1</div>
+						<div class="bachar-stats-equip-tear">T1</div>
+						<div class="bachar-stats-equip-type">E</div>
+						<div class="bachar-stats-equip-img">{{Sandbox/一位史蒂夫/1|{{{name|Shiroko}}}|2}}</div>
+					</div>
+					<div class="bachar-stats-equip-container">
+						<div class="bachar-stats-equip-level">Lv.1</div>
+						<div class="bachar-stats-equip-tear">T1</div>
+						<div class="bachar-stats-equip-type">E</div>
+						<div class="bachar-stats-equip-img">{{Sandbox/一位史蒂夫/1|{{{name|Shiroko}}}|3}}</div>
+					</div>
+					<div class="bachar-stats-equip-empty">EMPTY</div>
+					<div class="bachar-stats-equip-upgate bachar-all-mainfont"><span
+							class="bachar-all-unitalic">暂无</span></div>
+				</div>
+			</div>
+			<!--详细数据面板悬浮框-->
+			<div class="bachar-stats-data-float-panel bachar-stats-data-float-panel-closed" style="display: none;">
+				<div class="bachar-stats-data-float-panel-head"><div class="bachar-stats-data-float-panel-close">×</div></div>
+				<div class="bachar-stats-data">
+					<div class="bachar-stats-dataleft" style="width:95%;">
+						<div class="bachar-stats-dataleft-line">
+							<div class="bachar-stats-container bachar-stats-AccuracyPoint" style="font-size:large;">
+								<span class="bachar-stats-data-name">命中数值</span><span
+									class="bachar-stats-value">NaN</span></div>
+							<div class="bachar-stats-container bachar-stats-DodgePoint" style="font-size:large;">
+								<span class="bachar-stats-data-name">回避数值</span><span
+									class="bachar-stats-value">NaN</span></div>
+						</div>
+						<div class="bachar-stats-dataleft-line">
+							<div class="bachar-stats-container bachar-stats-Range" style="font-size:large;"><span
+									class="bachar-stats-data-name">射程</span><span
+									class="bachar-stats-value">NaN</span></div>
+							<div class="bachar-stats-container bachar-stats-StabilityPoint"
+								 style="font-size:large;"><span class="bachar-stats-data-name">稳定性</span><span
+									class="bachar-stats-value">NaN</span></div>
+						</div>
+						<div class="bachar-stats-dataleft-line">
+							<div class="bachar-stats-container bachar-stats-CriticalPoint" style="font-size:large;">
+								<span class="bachar-stats-data-name">暴击数值</span><span
+									class="bachar-stats-value">NaN</span></div>
+							<div class="bachar-stats-container bachar-stats-CriticalDamageRate"
+								 style="font-size:large;"><span class="bachar-stats-data-name">暴击伤害</span><span
+									class="bachar-stats-value">NaN</span></div>
+						</div>
+						<div class="bachar-stats-dataleft-line">
+							<div class="bachar-stats-container bachar-stats-OppressionPower"
+								 style="font-size:large;"><span
+									class="bachar-stats-data-name">群控强化力</span><span
+									class="bachar-stats-value">NaN</span></div>
+							<div class="bachar-stats-container bachar-stats-OppressionResist"
+								 style="font-size:large;"><span
+									class="bachar-stats-data-name">群控抵抗力</span><span
+									class="bachar-stats-value">NaN</span></div>
+						</div>
+						<div class="bachar-stats-dataleft-line">
+							<div class="bachar-stats-container bachar-stats-AmmoCount" style="font-size:large;">
+								<span class="bachar-stats-data-name">弹药数量</span><span
+									class="bachar-stats-value">NaN</span></div>
+							<div class="bachar-stats-container bachar-stats-AmmoCost" style="font-size:large;"><span
+									class="bachar-stats-data-name">弹药消耗</span><span class="bachar-stats-value">NaN</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{{蔚蓝档案技能/canary
+|name = {{{name|Shiroko}}}
+|攻击类型 = {{#switch:{{#invoke:BACharData|main|{{{name|Shiroko}}}|AttackType}}|Explosion=R|Pierce=Y|Mystic=B|#default=B}}
+|EX技能名称 = {{{EX技能名称|}}}
+|基本技能名称 = {{{基本技能名称|}}}
+|强化技能名称 = {{{强化技能名称|}}}
+|子技能名称 = {{{子技能名称|}}}
+|EX技能编号 = {{{EX技能编号|}}}<!-- 或者有哪个好心人给替换成tag吧，秋梨膏 -->
+|基本技能编号 = {{{基本技能编号|}}}
+|强化技能编号 = {{{强化技能编号|}}}
+|子技能编号 = {{{子技能编号|}}}
+|EX技能描述 = {{{EX技能描述|}}}
+|COST = {{{COST}}} <!-- 仅EX有cost -->
+|基本技能描述 = {{{基本技能描述|}}}
+|强化技能描述 = {{{强化技能描述|}}}
+|子技能描述 = {{{子技能描述|}}}
+}}<!-- 暂时调用模板 -->
+{{{技能材料|{{蔚蓝档案技能材料|}}}}}
+{{蔚蓝档案综合信息/canary
+|name = {{{name|Shiroko}}}
+|武器名称 = {{{武器名称|}}}
+|武器描述 = {{{武器描述|}}}
+|羁绊描述 = 【模板升级，暂不显示】
+|武器等级描述 = 【模板升级，暂不显示】
+|武器技能描述 = {{{武器技能描述|}}}
+|ter = {{#switch:{{#invoke:BACharData|w|{{{name|Shiroko}}}|WAdaptType}}|Street=城镇战|Indoor=室内战|Outdoor=野战}}
+|terLv = {{#invoke:BACharData|w|{{{name|Shiroko}}}|AdaptRank}}
+}}
+<noinclude>[[分类:使用模板样式的模板]]</noinclude>
